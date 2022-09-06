@@ -8,14 +8,12 @@ class Ship {
 
   calculateCords(coordinates) {
     const shipCoordinates = {}
-    let static = coordinates[0]
-    let changing = coordinates[1]
+    let x = coordinates[0]
+    let y = coordinates[1]
 
     for (let i = 0; i < this.length; i++) {
-      changing += i
-
-      if (this.isRotated) shipCoordinates[[changing, static]] = false
-      else shipCoordinates[[static, changing]] = false
+      if (this.isRotated) shipCoordinates[[x + i, y]] = false
+      else shipCoordinates[[x, y + i]] = false
     }
 
     return shipCoordinates
@@ -28,7 +26,7 @@ class Ship {
   isSunk() {
     let isSunk = true
 
-    for (state of this.coordinates) {
+    for (let state of Object.values(this.coordinates)) {
       if (!state) {
         isSunk = false
         break
