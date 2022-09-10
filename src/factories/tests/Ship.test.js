@@ -12,9 +12,9 @@ test('Tests if all data recorded correctly', () => {
     isRotated: false,
     coordinates: {
       '2,4': false,
-      '2,5': false,
-      '2,6': false,
-      '2,7': false,
+      '3,4': false,
+      '4,4': false,
+      '5,4': false,
     },
     sunk: false,
   })
@@ -28,9 +28,9 @@ test('Tests if all data recorded correctly if the ship is rotated', () => {
     isRotated: true,
     coordinates: {
       '2,4': false,
-      '3,4': false,
-      '4,4': false,
-      '5,4': false,
+      '2,5': false,
+      '2,6': false,
+      '2,7': false,
     },
     sunk: false,
   })
@@ -43,8 +43,8 @@ test('Hits the ship', () => {
 
 test('Sunks the ship', () => {
   ship.hit([2, 4])
-  ship.hit([2, 5])
-  ship.hit([2, 6])
-  ship.hit([2, 7])
+  ship.hit([3, 4])
+  ship.hit([4, 4])
+  ship.hit([5, 4])
   expect(ship.isSunk()).toBeTruthy()
 })
