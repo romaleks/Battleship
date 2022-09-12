@@ -12,6 +12,8 @@ class Gameboard {
   }
 
   receiveAttack(coordinates) {
+    if (!this.checkCell) return
+
     let hittedShip
 
     const isHit = this.ships.some(ship => {
@@ -32,6 +34,10 @@ class Gameboard {
 
     this.hittedCells.push({ coordinates: isHit })
     return isHit
+  }
+
+  checkCell(coordinates) {
+    return this.hittedCells.includes(coordinates)
   }
 
   isAllShipsSunk() {
