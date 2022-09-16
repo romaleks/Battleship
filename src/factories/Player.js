@@ -7,3 +7,5 @@ class Player {
     board.recieveAttach(coordinates)
   }
 }
+
+export default Player
