@@ -1,2 +1,2 @@
 import './styles/main.scss'
-import './dom/gridCreator'
+import './scripts/game'

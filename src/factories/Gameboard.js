@@ -32,7 +32,7 @@ class Gameboard {
       if (hittedShip.isSunk()) hittedShip.sunk = true
     }
 
-    this.hittedCells.push({ coordinates: isHit })
+    this.hittedCells.push({ [coordinates]: isHit })
     return isHit
   }
 

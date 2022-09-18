@@ -42,6 +42,12 @@ main {
     border: 3px solid hsl(201, 100%, 36%);
     .cell {
       border: 1px solid hsl(201, 100%, 86%);
+      &.missed {
+        background: hsl(201, 100%, 46%) !important;
+      }
+      &.hitted {
+        background: hsl(5, 80%, 65%) !important;
+      }
       &.player {
         cursor: pointer;
         &:hover {
@@ -52,6 +58,7 @@ main {
   }
   .coord {
     color: hsl(201, 100%, 36%);
+    user-select: none;
   }
 }
 .name {
