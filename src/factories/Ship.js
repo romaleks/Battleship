@@ -1,5 +1,5 @@
 class Ship {
-  constructor(length, coordinates, isRotated = false) {
+  constructor(length, coordinates, isRotated) {
     this.length = length
     this.isRotated = isRotated
     this.coordinates = this.calculateCords(coordinates)

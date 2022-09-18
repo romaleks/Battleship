@@ -6,8 +6,8 @@ class Gameboard {
     this.hittedCells = []
   }
 
-  placeShip(length, coordinates) {
-    const ship = new Ship(length, coordinates)
+  placeShip(length, coordinates, isRotated = false) {
+    const ship = new Ship(length, coordinates, isRotated)
     this.ships.push(ship)
   }
 
