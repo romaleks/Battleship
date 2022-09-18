@@ -9,15 +9,15 @@ beforeEach(() => {
 })
 
 test('Returns true if any ship is hitted', () => {
-  expect(gameboard.receiveAttack([2, 4])).toBeTruthy()
-  expect(gameboard.receiveAttack([3, 4])).toBeTruthy()
-  expect(gameboard.receiveAttack([4, 4])).toBeTruthy()
-  expect(gameboard.receiveAttack([5, 4])).toBeTruthy()
+  expect(gameboard.receiveAttack([2, 4])[0]).toBeTruthy()
+  expect(gameboard.receiveAttack([3, 4])[0]).toBeTruthy()
+  expect(gameboard.receiveAttack([4, 4])[0]).toBeTruthy()
+  expect(gameboard.receiveAttack([5, 4])[0]).toBeTruthy()
 })
 
 test('Returns false if no ship is hitted', () => {
-  expect(gameboard.receiveAttack([1, 4])).toBeFalsy()
-  expect(gameboard.receiveAttack([5, 6])).toBeFalsy()
+  expect(gameboard.receiveAttack([1, 4])[0]).toBeFalsy()
+  expect(gameboard.receiveAttack([5, 6])[0]).toBeFalsy()
 })
 
 test('Returns true if all ships are sunk', () => {

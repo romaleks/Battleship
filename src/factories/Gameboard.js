@@ -33,7 +33,7 @@ class Gameboard {
     }
 
     this.hittedCells.push({ [coordinates]: isHit })
-    return isHit
+    return [isHit, hittedShip]
   }
 
   checkCell(coordinates) {

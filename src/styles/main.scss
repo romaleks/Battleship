@@ -48,7 +48,10 @@ main {
       &.hitted {
         background: hsl(5, 80%, 65%) !important;
       }
-      &.player {
+      &.sunked {
+        background: hsl(353, 86%, 54%);
+      }
+      &.computer {
         cursor: pointer;
         &:hover {
           background: hsl(127, 27%, 61%);
