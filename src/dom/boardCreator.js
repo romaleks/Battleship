@@ -6,15 +6,19 @@ const playerBoardElement = document.querySelectorAll('.board')[0]
 const computerBoardElement = document.querySelectorAll('.board')[1]
 
 for (let i = 1; i <= 10; i++) {
+  // Creates player's board
   for (let j = 1; j <= 10; j++) {
     const cell = document.createElement('div')
     cell.classList.add('cell', 'player')
     cell.setAttribute('data-coords', [j, i])
+    cell.addEventListener('dragenter', () => cell.classList.add('hovered'))
+    cell.addEventListener('dragleave', () => cell.classList.remove('hovered'))
     playerBoardElement.appendChild(cell)
   }
 }
 
 for (let i = 1; i <= 10; i++) {
+  // Creates computer's board
   for (let j = 1; j <= 10; j++) {
     const cell = document.createElement('div')
     cell.classList.add('cell', 'computer')

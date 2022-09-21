@@ -20,7 +20,10 @@ const changeBoard = (cell, name, board, ship) => {
         cellElement.classList.add('sunked')
       }
 
-      if (board.isAllShipsSunk()) endGame(name)
+      if (board.isAllShipsSunk()) {
+        if (name === 'computer') endGame('Player')
+        else endGame('Computer')
+      }
     }
   } else cellElement.classList.add('missed')
 }

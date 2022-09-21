@@ -17,7 +17,7 @@ playerBoard.placeShip(4, [2, 7], true)
 
 const endGame = winnerName => {
   endPopup.classList.add('active')
-  popupTitle.textContent = winnerName[0].toUpperCase() + winnerName.slice(1) + ' won!'
+  popupTitle.textContent = winnerName + ' won!'
 }
 
 export { playerBoard, computerBoard, endGame }
