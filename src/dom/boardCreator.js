@@ -11,8 +11,6 @@ for (let i = 1; i <= 10; i++) {
     const cell = document.createElement('div')
     cell.classList.add('cell', 'player')
     cell.setAttribute('data-coords', [j, i])
-    cell.addEventListener('dragenter', () => cell.classList.add('hovered'))
-    cell.addEventListener('dragleave', () => cell.classList.remove('hovered'))
     playerBoardElement.appendChild(cell)
   }
 }

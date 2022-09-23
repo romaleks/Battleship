@@ -1,6 +1,7 @@
 import Player from '../factories/Player'
 import Gameboard from '../factories/Gameboard'
 import '../dom/boardCreator'
+import '../dom/dragDrop'
 
 const player = new Player('player')
 const computer = new Player('computer')
@@ -11,13 +12,13 @@ const popupTitle = endPopup.querySelector('.title')
 
 computerBoard.placeShip(3, [3, 3])
 computerBoard.placeShip(4, [5, 7], true)
-
-playerBoard.placeShip(3, [3, 3])
-playerBoard.placeShip(4, [2, 7], true)
+console.log(computerBoard)
 
 const endGame = winnerName => {
-  endPopup.classList.add('active')
-  popupTitle.textContent = winnerName + ' won!'
+  setTimeout(() => {
+    endPopup.classList.add('active')
+    popupTitle.textContent = winnerName + ' won!'
+  }, 500)
 }
 
 export { playerBoard, computerBoard, endGame }

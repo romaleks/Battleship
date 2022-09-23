@@ -8,8 +8,8 @@ class Ship {
 
   calculateCords(coordinates) {
     const shipCoordinates = {}
-    let x = coordinates[0]
-    let y = coordinates[1]
+    let x = +coordinates[0]
+    let y = +coordinates[1]
 
     for (let i = 0; i < this.length; i++) {
       if (this.isRotated) shipCoordinates[[x, y + i]] = false
