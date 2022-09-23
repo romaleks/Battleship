@@ -12,7 +12,6 @@ const popupTitle = endPopup.querySelector('.title')
 
 computerBoard.placeShip(3, [3, 3])
 computerBoard.placeShip(4, [5, 7], true)
-console.log(computerBoard)
 
 const endGame = winnerName => {
   setTimeout(() => {
