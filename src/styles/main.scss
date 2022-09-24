@@ -93,10 +93,21 @@ main {
 }
 .ships {
   .ship {
-    width: 40px;
     height: 40px;
     background: #999;
     cursor: move !important;
+    &[data-length='2'] {
+      width: 80px;
+    }
+    &[data-length='3'] {
+      width: 120px;
+    }
+    &[data-length='4'] {
+      width: 160px;
+    }
+    &[data-length='5'] {
+      width: 200px;
+    }
   }
 }
 // Popup

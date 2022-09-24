@@ -1,7 +1,10 @@
 import { playerBoard } from '../scripts/game'
 
 const boardElement = document.querySelectorAll('.cell.player')
-const shipElement = document.querySelector('.ship')
+const shipList = document.querySelectorAll('.ship')
+let shipElement
+
+shipList.forEach(ship => ship.addEventListener('mousedown', () => (shipElement = ship)))
 
 boardElement.forEach(cell => {
   cell.addEventListener('dragenter', () => cell.classList.add('hovered'))
@@ -25,7 +28,6 @@ boardElement.forEach(cell => {
       const cellElement = document.querySelector(
         '[data-player] [data-coords="' + shipCoords[i] + '"]'
       )
-      console.log(cellElement)
       cellElement.classList.add('shipped')
     }
   })
