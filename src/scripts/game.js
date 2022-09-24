@@ -2,6 +2,7 @@ import Player from '../factories/Player'
 import Gameboard from '../factories/Gameboard'
 import '../dom/boardCreator'
 import '../dom/dragDrop'
+import './functionality'
 
 const player = new Player('player')
 const computer = new Player('computer')

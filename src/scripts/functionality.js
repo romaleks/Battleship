@@ -5,4 +5,14 @@ const hitBoard = (coordinates, board, enemyName) => {
   changeBoard(board.hittedCells.slice(-1)[0], enemyName, board, hittedShip)
 }
 
+const activeStartButton = () => {
+  const shipsElement = document.querySelector('.ships')
+  const computerBoard = document.querySelector('.board.disabled')
+  shipsElement.style.display = 'none'
+  computerBoard.style.pointerEvents = 'all'
+}
+
+const startButton = document.querySelector('.button')
+startButton.addEventListener('click', activeStartButton)
+
 export default hitBoard
