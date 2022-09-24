@@ -1,6 +1,7 @@
 import { playerBoard } from '../scripts/game'
 
 const boardElement = document.querySelectorAll('.cell.player')
+const shipContainer = document.querySelector('.ships-container')
 const shipList = document.querySelectorAll('.ship')
 let shipElement
 
@@ -13,7 +14,7 @@ boardElement.forEach(cell => {
     ev.preventDefault()
   })
   cell.addEventListener('drop', () => {
-    shipElement.style.display = 'none'
+    shipContainer.removeChild(shipElement)
     cell.classList.remove('hovered')
     cell.classList.add('shipped')
 

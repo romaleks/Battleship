@@ -6,6 +6,10 @@ const hitBoard = (coordinates, board, enemyName) => {
 }
 
 const activeStartButton = () => {
+  const shipContainer = document.querySelector('.ships-container')
+
+  if (shipContainer.children.length > 0) return
+
   const shipsElement = document.querySelector('.ships')
   const computerBoard = document.querySelector('.board.disabled')
   shipsElement.style.display = 'none'
