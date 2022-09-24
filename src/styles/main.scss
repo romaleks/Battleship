@@ -92,9 +92,24 @@ main {
   }
 }
 .ships {
+  max-width: 400px;
+  padding: 0.5rem;
+  margin: 1.5rem auto;
+  border: 3px solid hsl(201, 100%, 46%);
+  .title {
+    font-size: 1.8rem;
+    color: #0077b6;
+    margin: 0 0 1rem 0;
+  }
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.7rem;
+  }
   .ship {
     height: 40px;
     background: #999;
+    border-radius: 5px 30px 30px 5px;
     cursor: move !important;
     &[data-length='2'] {
       width: 80px;
