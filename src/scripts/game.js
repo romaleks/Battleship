@@ -1,18 +1,38 @@
 import Player from '../factories/Player'
 import Gameboard from '../factories/Gameboard'
-import '../dom/boardCreator'
+import createBoards from '../dom/boardCreator'
+import { generateAvailableCoords } from './computerLogic'
 import '../dom/dragDrop'
 import './functionality'
 
 const player = new Player('player')
 const computer = new Player('computer')
-const playerBoard = new Gameboard()
-const computerBoard = new Gameboard()
+let playerBoard = new Gameboard()
+let computerBoard = new Gameboard()
 const endPopup = document.querySelector('.popup-body')
 const popupTitle = endPopup.querySelector('.title')
 
-computerBoard.placeShip(3, [3, 3])
-computerBoard.placeShip(4, [5, 7], true)
+const startGame = () => {
+  const shipsElement = document.querySelector('.ships')
+  const shipsContainer = shipsElement.querySelector('.ships-container')
+  const computerBoardElement = document.querySelector('[data-computer]')
+  shipsElement.style.display = 'block'
+  computerBoardElement.style.pointerEvents = 'none'
+  shipsContainer.innerHTML = `
+    <div data-length="5" class="ship" draggable="true"></div>
+    <div data-length="4" class="ship" draggable="true"></div>
+    <div data-length="3" class="ship" draggable="true"></div>
+    <div data-length="3" class="ship" draggable="true"></div>
+    <div data-length="2" class="ship" draggable="true"></div>
+  `
+
+  playerBoard = new Gameboard()
+  computerBoard = new Gameboard()
+  createBoards()
+  generateAvailableCoords()
+  computerBoard.placeShip(3, [3, 3])
+  computerBoard.placeShip(4, [5, 7], true)
+}
 
 const endGame = winnerName => {
   setTimeout(() => {
@@ -21,4 +41,4 @@ const endGame = winnerName => {
   }, 500)
 }
 
-export { playerBoard, computerBoard, endGame }
+export { playerBoard, computerBoard, endGame, startGame }

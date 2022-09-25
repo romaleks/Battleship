@@ -1,2 +1,3 @@
 import './styles/main.scss'
-import './scripts/game'
+import { startGame } from './scripts/game'
+startGame()

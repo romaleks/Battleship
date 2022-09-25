@@ -49,7 +49,7 @@ main {
         background: hsl(201, 100%, 46%);
       }
       &.shipped {
-        background: hsl(127, 27%, 61%);
+        background: #999;
       }
       &.missed {
         background: hsl(201, 100%, 46%) !important;

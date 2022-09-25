@@ -1,4 +1,5 @@
 import changeBoard from '../dom/boardChanger'
+import { startGame } from './game'
 
 const hitBoard = (coordinates, board, enemyName) => {
   const hittedShip = board.receiveAttack(coordinates)[1]
@@ -16,7 +17,15 @@ const activeStartButton = () => {
   computerBoard.style.pointerEvents = 'all'
 }
 
-const startButton = document.querySelector('.button')
+const activateRestartButton = () => {
+  const popup = document.querySelector('.popup-body')
+  popup.classList.remove('active')
+  startGame()
+}
+
+const startButton = document.querySelector('#start-btn')
+const restartButton = document.querySelector('#restart-btn')
 startButton.addEventListener('click', activeStartButton)
+restartButton.addEventListener('click', activateRestartButton)
 
 export default hitBoard

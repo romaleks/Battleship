@@ -1,10 +1,14 @@
 import changeBoard from '../dom/boardChanger'
 
-const availableCoords = []
+let availableCoords = []
 
-for (let i = 1; i <= 10; i++) {
-  for (let j = 1; j <= 10; j++) {
-    availableCoords.push([j, i])
+const generateAvailableCoords = () => {
+  availableCoords = []
+
+  for (let i = 1; i <= 10; i++) {
+    for (let j = 1; j <= 10; j++) {
+      availableCoords.push([j, i])
+    }
   }
 }
 
@@ -16,4 +20,4 @@ const computerHitBoard = (board, enemyName) => {
   changeBoard(board.hittedCells.slice(-1)[0], enemyName, board, hittedShip)
 }
 
-export default computerHitBoard
+export { computerHitBoard, generateAvailableCoords }
