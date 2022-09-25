@@ -30,8 +30,11 @@ const startGame = () => {
   computerBoard = new Gameboard()
   createBoards()
   generateAvailableCoords()
-  computerBoard.placeShip(3, [3, 3])
-  computerBoard.placeShip(4, [5, 7], true)
+  computerBoard.placeShip(2, [8, 2])
+  computerBoard.placeShip(3, [3, 1])
+  computerBoard.placeShip(3, [4, 3], true)
+  computerBoard.placeShip(4, [2, 7])
+  computerBoard.placeShip(5, [8, 5], true)
 }
 
 const endGame = winnerName => {

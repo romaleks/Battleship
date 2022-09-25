@@ -10,7 +10,9 @@ class Gameboard {
   placeShip(length, coordinates, isRotated = false) {
     const ship = new Ship(length, coordinates, isRotated)
 
-    if (+coordinates[0] + +length > 11) return false
+    const i = ship.isRotated ? 1 : 0
+
+    if (+coordinates[i] + +length > 11) return false
     if (!this.canPlaceShip(ship.coordinates)) return false
 
     this.ships.push(ship)
