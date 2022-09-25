@@ -3,12 +3,31 @@ import Ship from './Ship'
 class Gameboard {
   constructor() {
     this.ships = []
+    this.filledCells = []
     this.hittedCells = []
   }
 
   placeShip(length, coordinates, isRotated = false) {
     const ship = new Ship(length, coordinates, isRotated)
+
+    if (+coordinates[0] + +length > 11) return false
+    if (!this.canPlaceShip(ship.coordinates)) return false
+
     this.ships.push(ship)
+
+    for (const coords of Object.keys(ship.coordinates)) {
+      this.filledCells.push(coords)
+    }
+
+    return true
+  }
+
+  canPlaceShip(coordinates) {
+    for (const coords of Object.keys(coordinates)) {
+      if (this.filledCells.indexOf(coords) != -1) return false
+    }
+
+    return true
   }
 
   receiveAttack(coordinates) {

@@ -35,6 +35,7 @@ const startGame = () => {
 }
 
 const endGame = winnerName => {
+  console.log(playerBoard)
   setTimeout(() => {
     endPopup.classList.add('active')
     popupTitle.textContent = winnerName + ' won!'

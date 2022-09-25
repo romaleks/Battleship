@@ -15,14 +15,20 @@ const dragDrop = () => {
       ev.preventDefault()
     })
     cell.addEventListener('drop', () => {
+      const isPlaced = playerBoard.placeShip(
+        shipElement.getAttribute('data-length'),
+        cell.getAttribute('data-coords').split(',')
+      )
+
+      if (!isPlaced) {
+        cell.classList.remove('hovered')
+        return
+      }
+
       shipContainer.removeChild(shipElement)
       cell.classList.remove('hovered')
       cell.classList.add('shipped')
 
-      playerBoard.placeShip(
-        shipElement.getAttribute('data-length'),
-        cell.getAttribute('data-coords').split(',')
-      )
       const ship = playerBoard.ships.slice(-1)[0]
       const shipCoords = Object.keys(ship.coordinates)
 
